@@ -1,0 +1,19 @@
+//global using Microsoft.Extensions.DependencyInjection;
+//global using LangDetect.Abstractions;
+//global using LangDetect.Models;
+//global using LangDetect.Utility;
+//global using LangDetect.Pipeline;
+//global using LangDetect.Profiles.Unicode;
+//global using LangDetect.WordLists;
+//global using LangDetect.Extensions;
+
+global using LangDetect.Abstractions;
+global using LangDetect.Models;
+global using LangDetect.Utility;
+global using LangDetect.Pipeline;
+global using LangDetect.Profiles.Unicode;
+global using LangDetect.WordLists;
+global using LangDetect.Extensions;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Globalization;
+global using LangDetect.Profiles.NGram;

@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <PackageId>LangDetect</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Vishal Rashmika</Authors>
+    <Description>Lightweight text-based language detection for .NET</Description>
+    <PackageTags>language;detection;nlp;text</PackageTags>
+    <RepositoryUrl>https://github.com/VishalRashmika/LangDetect</RepositoryUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\Wordlists\Arabic-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Arabic-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Arabic-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\English-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\English-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Hindi-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Hindi-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Hindi-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Japanese-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Japanese-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Japanese-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Korean-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Korean-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Korean-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Mandarin-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Mandarin-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Mandarin-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Sinhala-1000-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Sinhala-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Sinhala-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Sinhalese-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Sinhalese-500-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Tamil-200-Wordlist.txt" />
+    <None Remove="Resources\Wordlists\Tamil-500-Wordlist.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Wordlists\Arabic-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Arabic-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Arabic-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\English-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\English-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\English-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Hindi-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Hindi-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Hindi-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Japanese-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Japanese-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Japanese-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Korean-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Korean-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Korean-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Mandarin-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Mandarin-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Mandarin-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Sinhala-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Sinhala-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Sinhala-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Tamil-1000-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Tamil-200-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Wordlists\Tamil-500-Wordlist.txt" />
+    <EmbeddedResource Include="Resources\Trigrams\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.5" />
+  </ItemGroup>
+</Project>
