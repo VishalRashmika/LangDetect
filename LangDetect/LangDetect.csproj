@@ -4,12 +4,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <PackageId>LangDetect</PackageId>
+    <PackageId>LangDetect.Net</PackageId>
     <Version>1.0.0</Version>
     <Authors>Vishal Rashmika</Authors>
     <Description>Lightweight text-based language detection for .NET</Description>
     <PackageTags>language;detection;nlp;text</PackageTags>
     <RepositoryUrl>https://github.com/VishalRashmika/LangDetect</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
@@ -39,6 +41,7 @@
     <None Remove="Resources\Wordlists\Sinhalese-500-Wordlist.txt" />
     <None Remove="Resources\Wordlists\Tamil-200-Wordlist.txt" />
     <None Remove="Resources\Wordlists\Tamil-500-Wordlist.txt" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
