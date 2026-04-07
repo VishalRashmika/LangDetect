@@ -2,8 +2,8 @@
 
 > Lightweight, self-contained language detection for .NET — no cloud, no Python, no runtime dependencies.
 
-[![NuGet](https://img.shields.io/nuget/v/LangDetect.svg)](https://www.nuget.org/packages/LangDetect)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/LangDetect.svg)](https://www.nuget.org/packages/LangDetect)
+[![NuGet](https://img.shields.io/nuget/v/LangDetect.svg)](https://www.nuget.org/packages/LangDetect.Net)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/LangDetect.svg)](https://www.nuget.org/packages/LangDetect.Net)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com)
 
