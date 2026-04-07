@@ -1,26 +1,13 @@
-# LangDetect
+# LangDetect.Net
 
 > Lightweight, self-contained language detection for .NET — no cloud, no Python, no runtime dependencies.
 
-[![NuGet](https://img.shields.io/nuget/v/LangDetect.svg)](https://www.nuget.org/packages/LangDetect.Net)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/LangDetect.svg)](https://www.nuget.org/packages/LangDetect.Net)
+[![NuGet](https://img.shields.io/nuget/v/LangDetect.Net.svg)](https://www.nuget.org/packages/LangDetect.Net)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/LangDetect.Net.svg)](https://www.nuget.org/packages/LangDetect.Net)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com)
 
 LangDetect is a .NET 8 class library for detecting the language of a given text string. It uses a multi-stage detection pipeline — Unicode script analysis, common word frequency matching, and character trigram profiling — to identify languages accurately across both native scripts and romanized Latin representations.
-
----
-
-## Features
-
-- **Zero external dependencies** — no cloud APIs, no Python runtime, no native libraries
-- **Multi-stage pipeline** — Unicode detection → word frequency → trigram fallback
-- **Romanized script support** — detects Singlish, Tanglish, Pinyin, Romaji, and other Latin-script representations
-- **Confidence scoring** — every result includes a confidence score and `IsReliable` flag
-- **ISO 639-1 codes** — all results expose standard language codes (`en`, `ar`, `si`, etc.)
-- **Configurable word list sizes** — choose between Small (200), Medium (500), or Large (1000) word lists
-- **DI-friendly** — first-class support for `Microsoft.Extensions.DependencyInjection`
-- **NuGet-ready** — single package install, embedded word lists and trigram data included
 
 ---
 
@@ -42,10 +29,10 @@ LangDetect is a .NET 8 class library for detecting the language of a given text 
 ## Installation
 
 ```bash
-dotnet add package LangDetect
+dotnet add package LangDetect.Net
 ```
 
-Or via the NuGet Package Manager in Visual Studio — search for `LangDetect`.
+Or via the NuGet Package Manager in Visual Studio — search for `LangDetect.Net`.
 
 ---
 
@@ -111,31 +98,6 @@ var detector = new LanguageDetectorFactory().Create(new DetectorOptions
 | `WordListSize.Small` | 200 | Memory-constrained environments, fast startup |
 | `WordListSize.Medium` | 500 | Balanced — recommended default |
 | `WordListSize.Large` | 1000 | Best accuracy, especially for short inputs |
-
----
-
-## Dependency Injection
-
-```csharp
-// Program.cs
-builder.Services.AddLanguageDetector(options =>
-{
-    options.ConfidenceThreshold = 0.80f;
-    options.WordListSize        = WordListSize.Large;
-});
-
-// inject and use anywhere
-public class ContentService(IAudioLanguageDetector detector)
-{
-    public string GetLanguage(string text)
-    {
-        var result = detector.Detect(text);
-        return result.IsReliable
-            ? $"{result.Language} ({result.IsoCode})"
-            : "Unknown";
-    }
-}
-```
 
 ---
 
@@ -244,36 +206,24 @@ LanguageCode.FromIso("xyz");            // Language.Unknown
 
 ## Known Limitations
 
-- **Mixed-script text** — a sentence containing both Japanese and English characters may not detect reliably. Detection is based on the dominant script ratio (configurable via `MinNonLatinRatio`).
-- **Very short inputs** — single words or very short phrases reduce confidence across all stages. Use `WordListSize.Large` for best results on short text.
-- **Romanized Mandarin (Pinyin)** — Pinyin uses common Latin characters that overlap with English. Detection accuracy is moderate; confidence scores are intentionally conservative.
+- **Mixed-script text**
+- **Very short inputs**
+- **Romanized Mandarin (Pinyin)**
 - **No multi-language detection** — a single `Detect()` call returns one language. Mixed documents are planned for v2.
 - **N-gram profiles are derived from word lists** — trigram quality is directly proportional to word list quality and size.
 
 ---
 
 ## Roadmap
-
-### V1 (current)
-- [x] Unicode range detection for 7 non-Latin scripts
-- [x] Common word frequency matching
-- [x] Character trigram profiling
-- [x] Romanized script detection (Singlish, Tanglish, Pinyin, Romaji)
-- [x] Configurable word list sizes (Small / Medium / Large)
-- [x] ISO 639-1 language codes
-- [x] DI extension (`AddLanguageDetector`)
-- [x] Diagnostic logger support
-- [x] Confidence scoring and `IsReliable` flag
-
-### V2 (planned)
-- [ ] Multi-language detection — ranked candidate list with per-language confidence scores
-- [ ] Code-switching support — detect language changes within a single document
-- [ ] Expanded language support — French, Spanish, Portuguese, German, Russian
-- [ ] Compact ONNX model for Latin-script disambiguation
-- [ ] Dialect identification — Mandarin vs Cantonese, Indian English vs British English
-- [ ] Streaming / span detection over long documents
-- [ ] Calibrated confidence scores via isotonic regression
-- [ ] Proper benchmark suite with labeled test dataset
+### Planned features in V2
+- Multi-language detection — ranked candidate list with per-language confidence scores
+- Code-switching support — detect language changes within a single document
+- Expanded language support — French, Spanish, Portuguese, German, Russian
+- Compact ONNX model for Latin-script disambiguation
+- Dialect identification — Mandarin vs Cantonese, Indian English vs British English
+- Streaming / span detection over long documents
+- Calibrated confidence scores via isotonic regression
+- Proper benchmark suite with labeled test dataset
 
 ---
 
@@ -286,14 +236,7 @@ Contributions are welcome. Please open an issue before submitting a pull request
 3. Commit your changes
 4. Push to the branch and open a Pull Request
 
-### Running tests
-
-```bash
-dotnet test
-```
-
 ### Generating trigram data
-
 If you update the word lists, regenerate the trigram JSON files using the included tool:
 
 ```bash
@@ -308,10 +251,3 @@ Then copy the output from `Resources/Trigrams/` into `LangDetect/Resources/Trigr
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
-
----
-
-## Author
-
-**Vishal Rashmika**
-[GitHub](https://github.com/VishalRashmika) · [NuGet](https://www.nuget.org/profiles/VishalRashmika)
