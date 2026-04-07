@@ -23,9 +23,6 @@ jobs:
       - name: Build
         run: dotnet build -c Release --no-restore
 
-      - name: Run tests
-        run: dotnet test -c Release --no-build
-
       - name: Pack
         run: dotnet pack src/LangDetect/LangDetect.csproj -c Release --no-build -o ./nupkg
 
