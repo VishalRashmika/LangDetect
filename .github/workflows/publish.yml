@@ -24,7 +24,7 @@ jobs:
         run: dotnet build -c Release --no-restore
 
       - name: Pack
-        run: dotnet pack src/LangDetect/LangDetect.csproj -c Release --no-build -o ./nupkg
+        run: dotnet pack LangDetect/LangDetect.csproj -c Release --no-build -o ./nupkg
 
       - name: Push to NuGet
         run: |
