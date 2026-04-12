@@ -1,5 +1,9 @@
 # LangDetect.Net
 
+<div align="center">
+  <img src="./Assets/LangDetect-Logo-Transparent-BG.png" alt="LangDetect Logo" width="200" height="200" />
+</div>
+
 > Lightweight, self-contained language detection for .NET — no cloud, no Python, no runtime dependencies.
 
 [![NuGet](https://img.shields.io/nuget/v/LangDetect.Net.svg)](https://www.nuget.org/packages/LangDetect.Net)
