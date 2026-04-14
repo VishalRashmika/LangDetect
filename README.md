@@ -21,13 +21,13 @@ LangDetect is a .NET 8 class library for detecting the language of a given text 
 | Language | Native Script | Unicode Range | Romanized Detection |
 |---|---|---|---|
 | English | Latin | U+0000–U+007F | Native (Latin) |
-| Arabic | Arabic | U+0600–U+06FF | Word list fallback |
-| Hindi | Devanagari | U+0900–U+097F | Word list fallback |
-| Mandarin | CJK Ideographs | U+4E00–U+9FFF | Word list fallback (Pinyin) |
-| Japanese | Hiragana + Katakana | U+3040–U+30FF | Word list fallback (Romaji) |
-| Korean | Hangul Syllables | U+AC00–U+D7AF | Word list fallback |
-| Sinhala | Sinhala | U+0D80–U+0DFF | Word list fallback (Singlish) |
-| Tamil | Tamil | U+0B80–U+0BFF | Word list fallback (Tanglish) |
+| Arabic | Arabic | U+0600–U+06FF | ✓ Word list (Arabizi) |
+| Hindi | Devanagari | U+0900–U+097F | ✓ Word list (Hinglish) |
+| Mandarin | CJK Ideographs | U+4E00–U+9FFF | ✓ Word list (Pinyin) |
+| Japanese | Hiragana + Katakana | U+3040–U+30FF | ✓ Word list (Romaji) |
+| Korean | Hangul Syllables | U+AC00–U+D7AF | ✓ Word list (Revised Romanization) |
+| Sinhala | Sinhala | U+0D80–U+0DFF | ✓ Word list (Singlish) |
+| Tamil | Tamil | U+0B80–U+0BFF | ✓ Word list (Tanglish) |
 
 ---
 
