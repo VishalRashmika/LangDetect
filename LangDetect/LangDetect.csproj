@@ -42,7 +42,7 @@
     <None Remove="Resources\Wordlists\Sinhalese-500-Wordlist.txt" />
     <None Remove="Resources\Wordlists\Tamil-200-Wordlist.txt" />
     <None Remove="Resources\Wordlists\Tamil-500-Wordlist.txt" />
-    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,6 +78,6 @@
   </ItemGroup>
 
   <ItemGroup>
-  <None Include="Assets\icon.png" Pack="true" PackagePath="\" />
+  <None Include="Assets\icon.png" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>

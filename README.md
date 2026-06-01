@@ -193,6 +193,44 @@ Output:
 
 ---
 
+## Benchmark Results
+
+On 2026-05-10, I ran a benchmark suite across all 8 supported languages and compared LangDetect.Net against Lingua and Panlingo using their default configurations, without any fine-tuning.
+
+The benchmark dataset used for these results is available on Kaggle: [LangDetect.Net v1 Benchmark Dataset](https://www.kaggle.com/datasets/vishalrashmika/langdetect-net-v1-benchmark-dataset/data).
+
+### Key takeaways
+
+- LangDetect.Net delivered the highest overall accuracy.
+- Lingua reported strong confidence scores, but its accuracy and memory usage were both significantly worse.
+- Panlingo was the fastest library in raw per-sample time, but it trailed LangDetect.Net on accuracy.
+- The confusion matrix shows a strong diagonal with limited cross-language misclassification.
+- Hindi and Japanese accounted for the most confusion, mainly because of overlapping romanization patterns.
+- The three-stage pipeline - Unicode script analysis, word frequency matching, and trigram profiling - gives LangDetect.Net its best balance of accuracy, speed, and memory use.
+- All libraries were tested with their default settings, with no manual tuning.
+
+### Comparison Table
+
+| Library | Correct / Total | Failures | Accuracy | Avg. confidence | Avg. time / sample | Avg. memory / sample |
+|---|---:|---:|---:|---:|---:|---:|
+| LangDetect.Net | 1320 / 1572 | 252 | 83.97% | 0.757 | 0.174 ms | 2,404 B |
+| Lingua | 796 / 1572 | 776 | 50.64% | 0.940 | 0.233 ms | 44,948 B |
+| Panlingo | 806 / 1572 | 766 | 51.27% | 0.439 | 0.014 ms | 74 B |
+
+Note: confidence scores are library-reported values and are not directly normalized across engines.
+
+### Visual Summary
+
+| Accuracy heatmap | Confusion matrix |
+|---|---|
+| ![Accuracy by language](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_heatmap_accuracy_per_language.png) | ![Confusion matrix](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_confusion_matrix.png) |
+| Raw performance | Memory percentiles |
+| ![Grouped performance comparison](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_raw_performance_grouped_bar.png) | ![Memory percentile comparison](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_memory_percentiles.png) |
+
+Additional charts are available in `Assets/testBenchmarks/`, including per-language radar plots, language winner breakdowns, stacked misclassifications, and top failure summaries.
+
+---
+
 ## ISO Language Codes
 
 ```csharp
@@ -228,7 +266,6 @@ LanguageCode.FromIso("xyz");            // Language.Unknown
 - Dialect identification — Mandarin vs Cantonese, Indian English vs British English
 - Streaming / span detection over long documents
 - Calibrated confidence scores via isotonic regression
-- Proper benchmark suite with labeled test dataset
 
 ---
 
