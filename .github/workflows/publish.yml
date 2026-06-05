@@ -24,7 +24,11 @@ jobs:
         run: dotnet build -c Release --no-restore
 
       - name: Pack
-        run: dotnet pack LangDetect/LangDetect.csproj -c Release --no-build -o ./nupkg
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          VERSION="${RELEASE_TAG#v}"
+          dotnet pack LangDetect/LangDetect.csproj -c Release --no-build -o ./nupkg -p:PackageVersion="$VERSION" -p:Version="$VERSION"
 
       - name: Push to NuGet
         env:

@@ -111,7 +111,7 @@ var detector = new LanguageDetectorFactory().Create(new DetectorOptions
 LangDetect uses a three-stage pipeline. Each stage runs in priority order and the result is returned as soon as a confident detection is made (early exit).
 
 <center>
-<img src="./Assets/process-flow/process-flow-v1.png" style="width:500px">
+<img src="https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/process-flow/process-flow-v1.png" style="width:500px">
 </center>
 
 ### Stage details
@@ -205,9 +205,9 @@ Note: confidence scores are library-reported values and are not directly normali
 
 | Accuracy heatmap | Confusion matrix |
 |---|---|
-| ![Accuracy by language](./Assets/testBenchmarks/chart_heatmap_accuracy_per_language.png) | ![Confusion matrix](./Assets/testBenchmarks/chart_confusion_matrix.png) |
+| ![Accuracy by language](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_heatmap_accuracy_per_language.png) | ![Confusion matrix](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_confusion_matrix.png) |
 | Raw performance | Memory percentiles |
-| ![Grouped performance comparison](./Assets/testBenchmarks/chart_raw_performance_grouped_bar.png) | ![Memory percentile comparison](./Assets/testBenchmarks/chart_memory_percentiles.png) |
+| ![Grouped performance comparison](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_raw_performance_grouped_bar.png) | ![Memory percentile comparison](https://raw.githubusercontent.com/VishalRashmika/LangDetect/refs/heads/main/Assets/testBenchmarks/chart_memory_percentiles.png) |
 
 Additional charts are available in `Assets/testBenchmarks/`, including per-language radar plots, language winner breakdowns, stacked misclassifications, and top failure summaries.
 
